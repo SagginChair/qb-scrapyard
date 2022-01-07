@@ -24,12 +24,11 @@ AddEventHandler('qb-scrapyard:server:ScrapVehicle', function(listKey)
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
             Citizen.Wait(500)
         end
-        local Luck = math.random(1, 8)
-        local Odd = math.random(1, 8)
+        local Luck = math.random(1, 5)
+        local Odd = math.random(1, 5)
         if Luck == Odd then
-            local random = math.random(10, 20)
-            Player.Functions.AddItem("rubber", random)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["rubber"], 'add')
+            Player.Functions.AddItem("electronics", 1)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["electronics"], 'add')
 
         end
         Config.CurrentVehicles[listKey] = nil
